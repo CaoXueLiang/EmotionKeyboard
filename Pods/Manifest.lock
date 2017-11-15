@@ -1,0 +1,17 @@
+PODS:
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - YYCategories
+  - YYModel
+
+SPEC CHECKSUMS:
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: f076f95f3c6303c756d094caf9cce71133ae8cf3
+
+COCOAPODS: 1.2.1
