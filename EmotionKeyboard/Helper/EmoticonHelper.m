@@ -137,7 +137,8 @@
         NSString *emoticonPlistPath = [emoticonBundlePath stringByAppendingPathComponent:@"emoticons.plist"];
         NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:emoticonPlistPath];
         NSArray *packages = plist[@"packages"];
-        groups = (NSMutableArray *)[NSArray modelArrayWithClass:[EmoticonGroup class] json:packages];
+        /*将数组转化为EmoticonGroup的集合*/
+        groups = (NSMutableArray *)[NSArray yy_modelArrayWithClass:[EmoticonGroup class] json:packages];
         
         NSMutableDictionary *groupDic = [NSMutableDictionary new];
         for (int i = 0, max = (int)groups.count; i < max; i++) {
@@ -151,7 +152,7 @@
             NSString *path = [emoticonBundlePath stringByAppendingPathComponent:group.groupID];
             NSString *infoPlistPath = [path stringByAppendingPathComponent:@"info.plist"];
             NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:infoPlistPath];
-            [group modelSetWithDictionary:info];
+            [group yy_modelSetWithDictionary:info];
             if (group.emoticons.count == 0) {
                 i--;
                 max--;

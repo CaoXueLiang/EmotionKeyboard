@@ -14,28 +14,9 @@
 		58B0DA6D1FBA8737007F40E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B0DA6C1FBA8737007F40E3 /* Assets.xcassets */; };
 		58B0DA701FBA8737007F40E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B0DA6E1FBA8737007F40E3 /* LaunchScreen.storyboard */; };
 		58B0DA731FBA8737007F40E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B0DA721FBA8737007F40E3 /* main.m */; };
-		58B0DA7D1FBA8737007F40E3 /* EmotionKeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B0DA7C1FBA8737007F40E3 /* EmotionKeyboardTests.m */; };
-		58B0DA881FBA8737007F40E3 /* EmotionKeyboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B0DA871FBA8737007F40E3 /* EmotionKeyboardUITests.m */; };
 		58B0DA981FBA8BF9007F40E3 /* NormalEmotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B0DA971FBA8BF9007F40E3 /* NormalEmotionCell.m */; };
 		F176E76148A480F0D3DA1156 /* libPods-EmotionKeyboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD99EE25A73AD706B7AEAC51 /* libPods-EmotionKeyboard.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		58B0DA791FBA8737007F40E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 58B0DA581FBA8737007F40E3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 58B0DA5F1FBA8737007F40E3;
-			remoteInfo = EmotionKeyboard;
-		};
-		58B0DA841FBA8737007F40E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 58B0DA581FBA8737007F40E3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 58B0DA5F1FBA8737007F40E3;
-			remoteInfo = EmotionKeyboard;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		58828A621FBC222C009674FB /* EmoticonGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmoticonGroup.h; sourceTree = "<group>"; };
@@ -53,12 +34,6 @@
 		58B0DA6F1FBA8737007F40E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58B0DA711FBA8737007F40E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58B0DA721FBA8737007F40E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		58B0DA781FBA8737007F40E3 /* EmotionKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmotionKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		58B0DA7C1FBA8737007F40E3 /* EmotionKeyboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmotionKeyboardTests.m; sourceTree = "<group>"; };
-		58B0DA7E1FBA8737007F40E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58B0DA831FBA8737007F40E3 /* EmotionKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmotionKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		58B0DA871FBA8737007F40E3 /* EmotionKeyboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmotionKeyboardUITests.m; sourceTree = "<group>"; };
-		58B0DA891FBA8737007F40E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58B0DA961FBA8BF9007F40E3 /* NormalEmotionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalEmotionCell.h; sourceTree = "<group>"; };
 		58B0DA971FBA8BF9007F40E3 /* NormalEmotionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalEmotionCell.m; sourceTree = "<group>"; };
 		8E31E8AB993B31E3BC4F7038 /* Pods-EmotionKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmotionKeyboard/Pods-EmotionKeyboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,20 +47,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F176E76148A480F0D3DA1156 /* libPods-EmotionKeyboard.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58B0DA751FBA8737007F40E3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58B0DA801FBA8737007F40E3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				58B0DA621FBA8737007F40E3 /* EmotionKeyboard */,
-				58B0DA7B1FBA8737007F40E3 /* EmotionKeyboardTests */,
-				58B0DA861FBA8737007F40E3 /* EmotionKeyboardUITests */,
 				58B0DA611FBA8737007F40E3 /* Products */,
 				F69352F2F429DD690AB0C847 /* Pods */,
 				D93B3D00C2262C2B9034F865 /* Frameworks */,
@@ -135,8 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				58B0DA601FBA8737007F40E3 /* EmotionKeyboard.app */,
-				58B0DA781FBA8737007F40E3 /* EmotionKeyboardTests.xctest */,
-				58B0DA831FBA8737007F40E3 /* EmotionKeyboardUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,24 +115,6 @@
 				58B0DA721FBA8737007F40E3 /* main.m */,
 			);
 			path = EmotionKeyboard;
-			sourceTree = "<group>";
-		};
-		58B0DA7B1FBA8737007F40E3 /* EmotionKeyboardTests */ = {
-			isa = PBXGroup;
-			children = (
-				58B0DA7C1FBA8737007F40E3 /* EmotionKeyboardTests.m */,
-				58B0DA7E1FBA8737007F40E3 /* Info.plist */,
-			);
-			path = EmotionKeyboardTests;
-			sourceTree = "<group>";
-		};
-		58B0DA861FBA8737007F40E3 /* EmotionKeyboardUITests */ = {
-			isa = PBXGroup;
-			children = (
-				58B0DA871FBA8737007F40E3 /* EmotionKeyboardUITests.m */,
-				58B0DA891FBA8737007F40E3 /* Info.plist */,
-			);
-			path = EmotionKeyboardUITests;
 			sourceTree = "<group>";
 		};
 		58B0DA951FBA8BCC007F40E3 /* Views */ = {
@@ -227,42 +166,6 @@
 			productReference = 58B0DA601FBA8737007F40E3 /* EmotionKeyboard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		58B0DA771FBA8737007F40E3 /* EmotionKeyboardTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 58B0DA8F1FBA8737007F40E3 /* Build configuration list for PBXNativeTarget "EmotionKeyboardTests" */;
-			buildPhases = (
-				58B0DA741FBA8737007F40E3 /* Sources */,
-				58B0DA751FBA8737007F40E3 /* Frameworks */,
-				58B0DA761FBA8737007F40E3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				58B0DA7A1FBA8737007F40E3 /* PBXTargetDependency */,
-			);
-			name = EmotionKeyboardTests;
-			productName = EmotionKeyboardTests;
-			productReference = 58B0DA781FBA8737007F40E3 /* EmotionKeyboardTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		58B0DA821FBA8737007F40E3 /* EmotionKeyboardUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 58B0DA921FBA8737007F40E3 /* Build configuration list for PBXNativeTarget "EmotionKeyboardUITests" */;
-			buildPhases = (
-				58B0DA7F1FBA8737007F40E3 /* Sources */,
-				58B0DA801FBA8737007F40E3 /* Frameworks */,
-				58B0DA811FBA8737007F40E3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				58B0DA851FBA8737007F40E3 /* PBXTargetDependency */,
-			);
-			name = EmotionKeyboardUITests;
-			productName = EmotionKeyboardUITests;
-			productReference = 58B0DA831FBA8737007F40E3 /* EmotionKeyboardUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -275,16 +178,6 @@
 					58B0DA5F1FBA8737007F40E3 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
-					};
-					58B0DA771FBA8737007F40E3 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 58B0DA5F1FBA8737007F40E3;
-					};
-					58B0DA821FBA8737007F40E3 = {
-						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 58B0DA5F1FBA8737007F40E3;
 					};
 				};
 			};
@@ -302,8 +195,6 @@
 			projectRoot = "";
 			targets = (
 				58B0DA5F1FBA8737007F40E3 /* EmotionKeyboard */,
-				58B0DA771FBA8737007F40E3 /* EmotionKeyboardTests */,
-				58B0DA821FBA8737007F40E3 /* EmotionKeyboardUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -315,20 +206,6 @@
 			files = (
 				58B0DA701FBA8737007F40E3 /* LaunchScreen.storyboard in Resources */,
 				58B0DA6D1FBA8737007F40E3 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58B0DA761FBA8737007F40E3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58B0DA811FBA8737007F40E3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,36 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58B0DA741FBA8737007F40E3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58B0DA7D1FBA8737007F40E3 /* EmotionKeyboardTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58B0DA7F1FBA8737007F40E3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58B0DA881FBA8737007F40E3 /* EmotionKeyboardUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		58B0DA7A1FBA8737007F40E3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 58B0DA5F1FBA8737007F40E3 /* EmotionKeyboard */;
-			targetProxy = 58B0DA791FBA8737007F40E3 /* PBXContainerItemProxy */;
-		};
-		58B0DA851FBA8737007F40E3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 58B0DA5F1FBA8737007F40E3 /* EmotionKeyboard */;
-			targetProxy = 58B0DA841FBA8737007F40E3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		58B0DA6E1FBA8737007F40E3 /* LaunchScreen.storyboard */ = {
@@ -575,64 +423,6 @@
 			};
 			name = Release;
 		};
-		58B0DA901FBA8737007F40E3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3PXZ8TZBJ4;
-				INFOPLIST_FILE = EmotionKeyboardTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = caoxueliang.EmotionKeyboardTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmotionKeyboard.app/EmotionKeyboard";
-			};
-			name = Debug;
-		};
-		58B0DA911FBA8737007F40E3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3PXZ8TZBJ4;
-				INFOPLIST_FILE = EmotionKeyboardTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = caoxueliang.EmotionKeyboardTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmotionKeyboard.app/EmotionKeyboard";
-			};
-			name = Release;
-		};
-		58B0DA931FBA8737007F40E3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3PXZ8TZBJ4;
-				INFOPLIST_FILE = EmotionKeyboardUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = caoxueliang.EmotionKeyboardUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EmotionKeyboard;
-			};
-			name = Debug;
-		};
-		58B0DA941FBA8737007F40E3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3PXZ8TZBJ4;
-				INFOPLIST_FILE = EmotionKeyboardUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = caoxueliang.EmotionKeyboardUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EmotionKeyboard;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -650,24 +440,6 @@
 			buildConfigurations = (
 				58B0DA8D1FBA8737007F40E3 /* Debug */,
 				58B0DA8E1FBA8737007F40E3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		58B0DA8F1FBA8737007F40E3 /* Build configuration list for PBXNativeTarget "EmotionKeyboardTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				58B0DA901FBA8737007F40E3 /* Debug */,
-				58B0DA911FBA8737007F40E3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		58B0DA921FBA8737007F40E3 /* Build configuration list for PBXNativeTarget "EmotionKeyboardUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				58B0DA931FBA8737007F40E3 /* Debug */,
-				58B0DA941FBA8737007F40E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

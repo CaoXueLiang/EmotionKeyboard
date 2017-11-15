@@ -34,3 +34,4 @@ typedef NS_ENUM(NSUInteger, EmoticonType) {
 @property (nonatomic, assign) NSInteger groupType;
 @property (nonatomic, strong) NSArray<Emoticon *> *emoticons;
 @end
+
