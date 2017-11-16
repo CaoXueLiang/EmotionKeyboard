@@ -66,7 +66,7 @@ static const NSInteger kOnePageCount = 20;
         if (count == 0) count = 1;
         index += count;
     }
-    _emoticonGroupPageIndexs = indexs;
+    _emoticonGroupPageIndexs = [indexs mutableCopy];
     
     /// 计算每一页的表情的个数
     NSMutableArray *pageCounts = [NSMutableArray new];
@@ -205,6 +205,18 @@ static const NSInteger kOnePageCount = 20;
 
 - (Emoticon *)_emoticonForIndexPath:(NSIndexPath *)indexPath {
     NSUInteger section = indexPath.section;
+    
+    /// _emoticonGroupPageIndexs = @[@0,@6,@10];
+    for (NSInteger i = 0; i < _emoticonGroupPageIndexs.count; i++) {
+        /// 获取当前分组第一页的索引
+        NSNumber *pageIndex = _emoticonGroupPageIndexs[i];
+        if (pageIndex.unsignedIntegerValue <= section) {
+            EmoticonGroup *group = _emoticonGroups[i];
+            NSUInteger page = section - pageIndex.unsignedIntegerValue;
+            NSUInteger index = page * kOnePageCount +
+        }
+    }
+    
     
     NSLog(@"%@",_emoticonGroupPageIndexs);
     for (NSInteger i = _emoticonGroupPageIndexs.count - 1; i >= 0; i--) {
