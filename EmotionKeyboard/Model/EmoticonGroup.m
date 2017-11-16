@@ -9,7 +9,9 @@
 #import "EmoticonGroup.h"
 
 @implementation Emoticon
-
++ (NSArray *)modelPropertyBlacklist {
+    return @[@"group"];
+}
 @end
 
 @implementation EmoticonGroup

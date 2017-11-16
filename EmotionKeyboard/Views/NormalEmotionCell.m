@@ -36,7 +36,7 @@
         return;
     }
     _emoticon = emoticon;
-    
+    self.emotionImageView.image = nil;
     if (_isDelete) {
         self.emotionImageView.image = [EmoticonHelper imageNamed:@"compose_emotion_delete"];
     }else if (_emoticon){

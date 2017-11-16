@@ -7,6 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "EmoticonHelper.h"
+#import <YYModel/YYModel.h>
+#import "EmoticonGroup.h"
+#import "EmoticonInputView.h"
+#import <YYCategories/YYCategories.h>
 
 @interface ViewController ()
 
@@ -18,6 +23,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.navigationItem.title = @"评论";
+    EmoticonInputView *tmpView =  [EmoticonInputView sharedView];
+    tmpView.top = 100;
+    [self.view addSubview:tmpView];
 }
 
 
