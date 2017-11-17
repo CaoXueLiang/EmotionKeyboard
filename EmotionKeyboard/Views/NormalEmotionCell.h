@@ -10,6 +10,7 @@
 
 @class Emoticon;
 @interface NormalEmotionCell : UICollectionViewCell
+@property (nonatomic,strong) UIImageView *emotionImageView;
 @property (nonatomic, strong) Emoticon *emoticon;
 @property (nonatomic, assign) BOOL isDelete; //是否是删除按钮
 @end

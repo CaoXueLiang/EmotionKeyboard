@@ -11,14 +11,15 @@
 #import <YYCategories/YYCategories.h>
 #import "EmoticonHelper.h"
 #import "NormalEmotionCell.h"
+#import "EmotionScrollView.h"
 
 static const NSInteger kViewHeight = 216;
 static const NSInteger kToolbarHeight = 37;
 static const NSInteger kOneEmoticonHeight = 50;
 static const NSInteger kOnePageCount = 20;
 
-@interface EmoticonInputView()<UICollectionViewDelegate,UICollectionViewDataSource>
-@property (nonatomic,strong) UICollectionView *myCollection;
+@interface EmoticonInputView()<UICollectionViewDelegate,UICollectionViewDataSource,EmotionScrollViewDelegate>
+@property (nonatomic,strong) EmotionScrollView *myCollection;
 @property (nonatomic,strong) NSArray<UIButton *> *toolbarButtons;
 @property (nonatomic,strong) UIView *pageControl;
 /// 所有的表情数组
@@ -104,13 +105,10 @@ static const NSInteger kOnePageCount = 20;
     layout.minimumInteritemSpacing = 0;
     layout.sectionInset = UIEdgeInsetsMake(0, paddingLeft, 0, paddingRight);
     
-    _myCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kOneEmoticonHeight *3.0) collectionViewLayout:layout];
+    _myCollection = [[EmotionScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kOneEmoticonHeight *3.0) collectionViewLayout:layout];
     [_myCollection registerClass:[NormalEmotionCell class] forCellWithReuseIdentifier:@"NormalEmotionCell"];
-    _myCollection.backgroundColor = [UIColor clearColor];
-    _myCollection.showsHorizontalScrollIndicator = NO;
     _myCollection.delegate = self;
     _myCollection.dataSource = self;
-    _myCollection.pagingEnabled = YES;
     _myCollection.top = 5;
     [self addSubview:_myCollection];
     
@@ -143,6 +141,7 @@ static const NSInteger kOnePageCount = 20;
         [btn setTitle:group.nameCN forState:UIControlStateNormal];
         btn.left = kScreenWidth / (float)_emoticonGroups.count *i;
         btn.tag = i;
+        btn.selected = !i;
         [scroll addSubview:btn];
         [buttonS addObject:btn];
     }
@@ -182,6 +181,33 @@ static const NSInteger kOnePageCount = 20;
     [self scrollViewDidScroll:_myCollection];
 }
 
+#pragma mark - EmotionScrollViewDelegate
+- (void)emoticonScrollViewDidTapCell:(NormalEmotionCell *)cell{
+    if (!cell) {
+        return;
+    }
+    if (cell.isDelete) {
+        if ([self.delegate respondsToSelector:@selector(emoticonInputDidTapBackspace)]) {
+            [[UIDevice currentDevice] playInputClick];
+            [self.delegate emoticonInputDidTapBackspace];
+        }
+    }else if (cell.emoticon){
+        NSString *text = nil;
+        switch (cell.emoticon.type) {
+            case EmoticonTypeEmoji:{
+                NSNumber *num = [NSNumber numberWithString:cell.emoticon.code];
+                text = [NSString stringWithUTF32Char:num.unsignedIntValue];
+            } break;
+            case EmoticonTypeImage:{
+                text = cell.emoticon.chs;
+            }break;
+        }
+        if (text && [self.delegate respondsToSelector:@selector(emoticonInputDidTapText:)]) {
+            [self.delegate emoticonInputDidTapText:text];
+        }
+    }
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return _emoticonGroupTotalPageCount;
@@ -205,49 +231,47 @@ static const NSInteger kOnePageCount = 20;
 
 - (Emoticon *)_emoticonForIndexPath:(NSIndexPath *)indexPath {
     NSUInteger section = indexPath.section;
-    
-    /// _emoticonGroupPageIndexs = @[@0,@6,@10];
-    for (NSInteger i = 0; i < _emoticonGroupPageIndexs.count; i++) {
-        /// 获取当前分组第一页的索引
-        NSNumber *pageIndex = _emoticonGroupPageIndexs[i];
-        if (pageIndex.unsignedIntegerValue <= section) {
-            EmoticonGroup *group = _emoticonGroups[i];
-            NSUInteger page = section - pageIndex.unsignedIntegerValue;
-            NSUInteger index = page * kOnePageCount +
-        }
+    /*
+     section 0~5    _emoticonGroups[0]
+     section 6~9    _emoticonGroups[1]
+     section 10~11  _emoticonGroups[2]
+     */
+
+    //判断当前section所在的索引
+    Emoticon *model = nil;
+    NSInteger currentIndex = 0;
+    EmoticonGroup *group;
+    NSInteger step2 = [_emoticonGroupPageIndexs[1] unsignedIntegerValue];
+    NSInteger step3 = [_emoticonGroupPageIndexs[2] unsignedIntegerValue];
+    if (section < step2) {
+        group = _emoticonGroups[0];
+        currentIndex = section *kOnePageCount + indexPath.row;
+ 
+    }else if (section < step3 && section >= step2){
+        group = _emoticonGroups[1];
+        currentIndex = (section - step2) *kOnePageCount + indexPath.row;
+        
+    }else if (section >= step3){
+        group = _emoticonGroups[2];
+        currentIndex = (section - step3) *kOnePageCount + indexPath.row;
     }
     
-    
-    NSLog(@"%@",_emoticonGroupPageIndexs);
-    for (NSInteger i = _emoticonGroupPageIndexs.count - 1; i >= 0; i--) {
-        //获取当前group的起始页索引
-        NSNumber *pageIndex = _emoticonGroupPageIndexs[i];
-        if (section >= pageIndex.unsignedIntegerValue) {
-            EmoticonGroup *group = _emoticonGroups[i];
-            NSUInteger page = section - pageIndex.unsignedIntegerValue;
-            NSUInteger index = page * kOnePageCount + indexPath.row;
-            
-            // transpose line/row
-            NSUInteger ip = index / kOnePageCount;
-            NSUInteger ii = index % kOnePageCount;
-            NSUInteger reIndex = (ii % 3) * 7 + (ii / 3);
-            index = reIndex + ip * kOnePageCount;
-            
-            if (index < group.emoticons.count) {
-                return group.emoticons[index];
-            } else {
-                return nil;
-            }
-        }
+    //坐标转换
+    NSUInteger ip = currentIndex / kOnePageCount;
+    NSUInteger ii = currentIndex % kOnePageCount;
+    NSUInteger reIndex = (ii % 3) * 7 + (ii / 3);
+    currentIndex = reIndex + ip * kOnePageCount;
+    if (group.emoticons.count > currentIndex) {
+        model = group.emoticons[currentIndex];
     }
-    return nil;
+    return model;
 }
 
 #pragma mark - UICollectionViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     /// 获取当前的页码
     NSInteger page = round(scrollView.contentOffset.x / scrollView.width);
-    page = MIN(_emoticonGroupTotalPageCount, MAX(0, page));
+    page = MIN(_emoticonGroupTotalPageCount - 1, MAX(0, page));
     if (page == _currentPageIndex) {
         return;
     }
@@ -255,9 +279,36 @@ static const NSInteger kOnePageCount = 20;
     NSInteger curGroupIndex = 0, curGroupPageIndex = 0, curGroupPageCount = 0;
     for (int i = 0; i < _emoticonGroupPageIndexs.count; i++) {
         NSNumber *pageIndex = _emoticonGroupPageIndexs[i];
-        
+        if (page >= pageIndex.unsignedIntegerValue) {
+            curGroupIndex = i;
+            curGroupPageIndex = [_emoticonGroupPageIndexs[i] integerValue];
+            curGroupPageCount = [_emoticonGroupPageCounts[i] integerValue];
+        }
     }
     
+    /// 添加分页符
+    [_pageControl.layer removeAllSublayers];
+    CGFloat padding = 5, width = 6, height = 2;
+    CGFloat pageControlWidth = (width + 2* padding) * curGroupPageCount;
+    for (int i = 0; i < curGroupPageCount; i++) {
+        CALayer *layer = [CALayer layer];
+        layer.size = CGSizeMake(width, height);
+        layer.cornerRadius = 1.0;
+        if (page - curGroupPageIndex == i) {
+            layer.backgroundColor = UIColorHex(fd8225).CGColor;
+        }else{
+            layer.backgroundColor = UIColorHex(dedede).CGColor;
+        }
+        layer.centerY = _pageControl.height / 2.0;
+        layer.left = (_pageControl.width - pageControlWidth) / 2.0 + i * (width + 2 * padding) + padding;
+        [_pageControl.layer addSublayer:layer];
+    }
+    
+    /// 底部按钮数组滑动到指定位置
+    [_toolbarButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIButton *btn = obj;
+        btn.selected = (idx == curGroupIndex);
+    }];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {

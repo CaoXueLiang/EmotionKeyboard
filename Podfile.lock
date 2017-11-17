@@ -2,16 +2,22 @@ PODS:
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
+  - YYKeyboardManager (1.0.1)
   - YYModel (1.0.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - YYCategories
+  - YYKeyboardManager
   - YYModel
+  - YYText
 
 SPEC CHECKSUMS:
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: f076f95f3c6303c756d094caf9cce71133ae8cf3
+PODFILE CHECKSUM: aca92d0402e4f53d5d875030086dbadbe5c6f4de
 
 COCOAPODS: 1.2.1

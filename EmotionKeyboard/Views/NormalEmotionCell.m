@@ -11,10 +11,6 @@
 #import "EmoticonHelper.h"
 #import <YYCategories/YYCategories.h>
 
-@interface NormalEmotionCell()
-@property (nonatomic,strong) UIImageView *emotionImageView;
-@end
-
 @implementation NormalEmotionCell
 #pragma mark - Init Menthod
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -32,9 +28,6 @@
 }
 
 - (void)setEmoticon:(Emoticon *)emoticon{
-    if (_emoticon == emoticon) {
-        return;
-    }
     _emoticon = emoticon;
     self.emotionImageView.image = nil;
     if (_isDelete) {
@@ -50,11 +43,6 @@
             }
         }else if (_emoticon.group.groupID && _emoticon.png){
             NSString *pngPath = [[EmoticonHelper emoticonBundle] pathForScaledResource:_emoticon.png ofType:nil inDirectory:_emoticon.group.groupID];
-            if (!pngPath) {
-                NSString *addBundlePath = [[EmoticonHelper emoticonBundle].bundlePath stringByAppendingPathComponent:@"additional"];
-                NSBundle *addBundle = [NSBundle bundleWithPath:addBundlePath];
-                pngPath = [addBundle pathForScaledResource:_emoticon.png ofType:nil inDirectory:_emoticon.group.groupID];
-            }
             if (pngPath) {
                 self.emotionImageView.image = [UIImage imageWithContentsOfFile:pngPath];
             }

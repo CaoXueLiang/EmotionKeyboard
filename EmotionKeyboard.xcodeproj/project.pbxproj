@@ -10,6 +10,8 @@
 		5854A2101FBD318800496C55 /* EmoticonWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5854A20F1FBD318800496C55 /* EmoticonWeibo.bundle */; };
 		5854A2121FBD318800496C55 /* ResourceWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5854A2111FBD318800496C55 /* ResourceWeibo.bundle */; };
 		5854A2151FBD66A500496C55 /* EmoticonInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5854A2141FBD66A500496C55 /* EmoticonInputView.m */; };
+		587B37BE1FBEC08200033070 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37BD1FBEC08200033070 /* CommentViewController.m */; };
+		587B37C11FBEC49600033070 /* EmotionScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37C01FBEC49600033070 /* EmotionScrollView.m */; };
 		58828A641FBC222C009674FB /* EmoticonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58828A631FBC222C009674FB /* EmoticonGroup.m */; };
 		58828A6B1FBC3274009674FB /* EmoticonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58828A6A1FBC3274009674FB /* EmoticonHelper.m */; };
 		58B0DA651FBA8737007F40E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B0DA641FBA8737007F40E3 /* AppDelegate.m */; };
@@ -26,6 +28,10 @@
 		5854A2111FBD318800496C55 /* ResourceWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ResourceWeibo.bundle; sourceTree = "<group>"; };
 		5854A2131FBD66A500496C55 /* EmoticonInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmoticonInputView.h; sourceTree = "<group>"; };
 		5854A2141FBD66A500496C55 /* EmoticonInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmoticonInputView.m; sourceTree = "<group>"; };
+		587B37BC1FBEC08200033070 /* CommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		587B37BD1FBEC08200033070 /* CommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		587B37BF1FBEC49600033070 /* EmotionScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmotionScrollView.h; sourceTree = "<group>"; };
+		587B37C01FBEC49600033070 /* EmotionScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmotionScrollView.m; sourceTree = "<group>"; };
 		58828A621FBC222C009674FB /* EmoticonGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmoticonGroup.h; sourceTree = "<group>"; };
 		58828A631FBC222C009674FB /* EmoticonGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmoticonGroup.m; sourceTree = "<group>"; };
 		58828A691FBC3274009674FB /* EmoticonHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmoticonHelper.h; sourceTree = "<group>"; };
@@ -58,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		587B37BB1FBEC04F00033070 /* Conreoller */ = {
+			isa = PBXGroup;
+			children = (
+				587B37BC1FBEC08200033070 /* CommentViewController.h */,
+				587B37BD1FBEC08200033070 /* CommentViewController.m */,
+			);
+			path = Conreoller;
+			sourceTree = "<group>";
+		};
 		58828A611FBC2088009674FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +121,9 @@
 		58B0DA621FBA8737007F40E3 /* EmotionKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				58828A681FBC324E009674FB /* Helper */,
 				58828A651FBC26C2009674FB /* Resources */,
+				58828A681FBC324E009674FB /* Helper */,
+				587B37BB1FBEC04F00033070 /* Conreoller */,
 				58828A611FBC2088009674FB /* Model */,
 				58B0DA951FBA8BCC007F40E3 /* Views */,
 				58B0DA631FBA8737007F40E3 /* AppDelegate.h */,
@@ -125,6 +141,8 @@
 		58B0DA951FBA8BCC007F40E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				587B37BF1FBEC49600033070 /* EmotionScrollView.h */,
+				587B37C01FBEC49600033070 /* EmotionScrollView.m */,
 				58B0DA961FBA8BF9007F40E3 /* NormalEmotionCell.h */,
 				58B0DA971FBA8BF9007F40E3 /* NormalEmotionCell.m */,
 				5854A2131FBD66A500496C55 /* EmoticonInputView.h */,
@@ -277,6 +295,8 @@
 				58828A6B1FBC3274009674FB /* EmoticonHelper.m in Sources */,
 				58B0DA731FBA8737007F40E3 /* main.m in Sources */,
 				5854A2151FBD66A500496C55 /* EmoticonInputView.m in Sources */,
+				587B37C11FBEC49600033070 /* EmotionScrollView.m in Sources */,
+				587B37BE1FBEC08200033070 /* CommentViewController.m in Sources */,
 				58828A641FBC222C009674FB /* EmoticonGroup.m in Sources */,
 				58B0DA981FBA8BF9007F40E3 /* NormalEmotionCell.m in Sources */,
 				58B0DA651FBA8737007F40E3 /* AppDelegate.m in Sources */,

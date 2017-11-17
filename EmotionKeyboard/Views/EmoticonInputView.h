@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol EmoticonInputViewDelegate <NSObject>
+@optional
+- (void)emoticonInputDidTapText:(NSString *)text;
+- (void)emoticonInputDidTapBackspace;
+@end
+
 @interface EmoticonInputView : UIView
+@property (nonatomic,weak) id<EmoticonInputViewDelegate> delegate;
 + (instancetype)sharedView;
 @end

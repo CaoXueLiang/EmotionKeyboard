@@ -3,5 +3,7 @@
 target 'EmotionKeyboard' do
   pod 'YYCategories'
   pod 'YYModel'
+  pod 'YYText'
+  pod 'YYKeyboardManager'
 end
 
