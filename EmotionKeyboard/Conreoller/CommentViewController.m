@@ -150,6 +150,15 @@
             [_emoticonButton setImage:[EmoticonHelper imageNamed:@"compose_keyboardbutton_background"] forState:UIControlStateNormal];
             [_emoticonButton setImage:[EmoticonHelper imageNamed:@"compose_keyboardbutton_background_highlighted"] forState:UIControlStateHighlighted];
         }
+    }else if (button == _atButton){
+        NSArray *atArray = @[@"@Angelababy " , @"@TimCook ", @"@我的印象笔记 "];
+        NSString *atString = [atArray randomObject];
+        [_textView replaceRange:_textView.selectedTextRange withText:atString];
+        
+    }else if (button == _topicButton){
+        NSArray *topic = @[@"#冰雪奇缘[电影]# ", @"#Let It Go[音乐]# ", @"#纸牌屋[图书]# ", @"#北京·理想国际大厦[地点]# " , @"#腾讯控股 kh00700[股票]# ", @"#WWDC# "];
+        NSString *topicString = [topic randomObject];
+        [_textView replaceRange:_textView.selectedTextRange withText:topicString];
     }
 }
 

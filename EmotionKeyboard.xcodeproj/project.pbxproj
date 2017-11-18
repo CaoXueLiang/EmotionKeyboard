@@ -10,6 +10,7 @@
 		5854A2101FBD318800496C55 /* EmoticonWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5854A20F1FBD318800496C55 /* EmoticonWeibo.bundle */; };
 		5854A2121FBD318800496C55 /* ResourceWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5854A2111FBD318800496C55 /* ResourceWeibo.bundle */; };
 		5854A2151FBD66A500496C55 /* EmoticonInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5854A2141FBD66A500496C55 /* EmoticonInputView.m */; };
+		585CE6531FC00A4400702A57 /* ComposeTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 585CE6521FC00A4400702A57 /* ComposeTextParser.m */; };
 		587B37BE1FBEC08200033070 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37BD1FBEC08200033070 /* CommentViewController.m */; };
 		587B37C11FBEC49600033070 /* EmotionScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37C01FBEC49600033070 /* EmotionScrollView.m */; };
 		58828A641FBC222C009674FB /* EmoticonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 58828A631FBC222C009674FB /* EmoticonGroup.m */; };
@@ -28,6 +29,8 @@
 		5854A2111FBD318800496C55 /* ResourceWeibo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ResourceWeibo.bundle; sourceTree = "<group>"; };
 		5854A2131FBD66A500496C55 /* EmoticonInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmoticonInputView.h; sourceTree = "<group>"; };
 		5854A2141FBD66A500496C55 /* EmoticonInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmoticonInputView.m; sourceTree = "<group>"; };
+		585CE6511FC00A4400702A57 /* ComposeTextParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeTextParser.h; sourceTree = "<group>"; };
+		585CE6521FC00A4400702A57 /* ComposeTextParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeTextParser.m; sourceTree = "<group>"; };
 		587B37BC1FBEC08200033070 /* CommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		587B37BD1FBEC08200033070 /* CommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		587B37BF1FBEC49600033070 /* EmotionScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmotionScrollView.h; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 			children = (
 				58828A691FBC3274009674FB /* EmoticonHelper.h */,
 				58828A6A1FBC3274009674FB /* EmoticonHelper.m */,
+				585CE6511FC00A4400702A57 /* ComposeTextParser.h */,
+				585CE6521FC00A4400702A57 /* ComposeTextParser.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				5854A2151FBD66A500496C55 /* EmoticonInputView.m in Sources */,
 				587B37C11FBEC49600033070 /* EmotionScrollView.m in Sources */,
 				587B37BE1FBEC08200033070 /* CommentViewController.m in Sources */,
+				585CE6531FC00A4400702A57 /* ComposeTextParser.m in Sources */,
 				58828A641FBC222C009674FB /* EmoticonGroup.m in Sources */,
 				58B0DA981FBA8BF9007F40E3 /* NormalEmotionCell.m in Sources */,
 				58B0DA651FBA8737007F40E3 /* AppDelegate.m in Sources */,
